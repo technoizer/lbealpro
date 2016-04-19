@@ -30,7 +30,7 @@
             <TextView
                 android:gravity="end"
                 style="@style/Base.TextAppearance.AppCompat.Headline"
-                android:text="30"
+                android:text="100"
                 android:id="@+id/timerClock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
