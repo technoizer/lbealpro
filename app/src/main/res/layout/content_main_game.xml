@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="id.ac.its.alpro.mathquiz.MainGameActivity"
+    tools:showIn="@layout/activity_main_game">
+    <LinearLayout
+        android:id="@+id/layoutSoal"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:text="Soal 1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="end"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:text="30"
+                android:id="@+id/timerClock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <TextView
+                android:padding="5dp"
+                android:text="Pak Toni adalah pedagang roti. Beliau menjual dagangannya menggunakan gerobak yang hanya memuat 600 roti. Roti yang dijualnya ada 2 macam yaitu roti manis dan roti tawar dengan masing-masing harganya adalah Rp 5.500,00 dan Rp 4.500,00 per bungkus. Dari penjualan roti ini, beliau datpat memperoleh keuntungan Rp 500,00 dari sebungkus roti manis dan sebesar  Rp 600,00 dari sebungkus roti tawar. Apabila modal yang dipunyai oleh Pak Toni adalah Rp 600.000, buatlah model matematika yang bertujuan untuk memperoleh keuntungan sebesar-besarnya!"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="25dp"
+        android:id="@+id/layoutJawaban"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:onClick="submitAnswer"
+                android:id="@+id/btnA"
+                android:layout_weight="1"
+                android:text="1000010010101010"
+                android:layout_width="160dp"
+                android:layout_height="100dp" />
+            <Button
+                android:onClick="submitAnswer"
+                android:id="@+id/btnB"
+                android:layout_weight="1"
+                android:text="1000010010101010"
+                android:layout_width="160dp"
+                android:layout_height="100dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:onClick="submitAnswer"
+                android:id="@+id/btnC"
+                android:layout_weight="1"
+                android:text="1000010010101010"
+                android:layout_width="160dp"
+                android:layout_height="100dp" />
+            <Button
+                android:onClick="submitAnswer"
+                android:id="@+id/btnD"
+                android:layout_weight="1"
+                android:text="1000010010101010"
+                android:layout_width="160dp"
+                android:layout_height="100dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
