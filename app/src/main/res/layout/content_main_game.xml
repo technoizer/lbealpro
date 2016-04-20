@@ -22,6 +22,7 @@
             android:layout_height="wrap_content">
             <TextView
                 android:gravity="center"
+                android:id="@+id/counterSoal"
                 style="@style/Base.TextAppearance.AppCompat.Headline"
                 android:text="Soal 1"
                 android:layout_width="match_parent"
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp">
             <TextView
+                android:id="@+id/soal"
                 android:padding="5dp"
                 android:text="Pak Toni adalah pedagang roti. Beliau menjual dagangannya menggunakan gerobak yang hanya memuat 600 roti. Roti yang dijualnya ada 2 macam yaitu roti manis dan roti tawar dengan masing-masing harganya adalah Rp 5.500,00 dan Rp 4.500,00 per bungkus. Dari penjualan roti ini, beliau datpat memperoleh keuntungan Rp 500,00 dari sebungkus roti manis dan sebesar  Rp 600,00 dari sebungkus roti tawar. Apabila modal yang dipunyai oleh Pak Toni adalah Rp 600.000, buatlah model matematika yang bertujuan untuk memperoleh keuntungan sebesar-besarnya!"
                 android:layout_width="wrap_content"

@@ -36,11 +36,11 @@ public class ScoreDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_TUGAS_TABLE = "CREATE TABLE tugas ( " +
+        String CREATE_SCORE_TABLE = "CREATE TABLE score ( " +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "nama_tugas TEXT, " +
-                "point INTEGER ";
-        db.execSQL(CREATE_TUGAS_TABLE);
+                "nama TEXT, " +
+                "point INTEGER)";
+        db.execSQL(CREATE_SCORE_TABLE);
     }
 
     @Override
@@ -127,6 +127,10 @@ public class ScoreDbHelper extends SQLiteOpenHelper {
                 new String[]{String.valueOf(score.getId())}); //selections args
         db.close();
         Log.d("delete", score.toString());
+    }
 
+    public void  clearData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS score");
     }
 }
