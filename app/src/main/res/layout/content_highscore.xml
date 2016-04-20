@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3949AB"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -18,144 +17,44 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="High Score"
-        android:textSize="50dp"
-        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:id="@+id/textView2"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:password="false" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Rahajeng"
-        android:id="@+id/textView3"
-        android:layout_marginTop="50dp"
-        android:textIsSelectable="false"
-        android:textColor="#ffff00"
-        android:textSize="35dp"
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/layout"
         android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Dui"
-        android:id="@+id/textView4"
-        android:textIsSelectable="false"
-        android:textColor="#ffff00"
-        android:textSize="35dp"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Ajeng"
-        android:id="@+id/textView5"
-        android:textColor="#ffff00"
-        android:textIsSelectable="false"
-        android:textSize="35dp"
-        android:layout_below="@+id/textView4"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Raha"
-        android:id="@+id/textView6"
-        android:textIsSelectable="false"
-        android:textColor="#ffff00"
-        android:textSize="35dp"
-        android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Mata"
-        android:id="@+id/textView7"
-        android:textColor="#ffff00"
-        android:textIsSelectable="false"
-        android:textSize="35dp"
-        android:layout_below="@+id/textView6"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="0000"
-        android:id="@+id/textView8"
-        android:textColor="#f92"
-        android:textIsSelectable="false"
-        android:textSize="35dp"
-        android:layout_above="@+id/textView11"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2" />
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:id="@+id/catagoryList"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:id="@+id/empty"
+            android:text="Tidak Ada Data"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="0000"
-        android:id="@+id/textView11"
-        android:textIsSelectable="false"
-        android:textSize="35dp"
-        android:textColor="#f92"
-        android:layout_below="@+id/textView5"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
+    <Button
+        android:onClick="clearScore"
+        android:padding="16dp"
+        android:id="@+id/clearBtn"
+        android:layout_marginTop="48dp"
+        android:layout_below="@id/layout"
+        android:text="Clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="0000"
-        android:textColor="#f92"
-        android:id="@+id/textView12"
-        android:textIsSelectable="false"
-        android:textSize="35dp"
-        android:layout_alignBottom="@+id/textView7"
-        android:layout_alignLeft="@+id/textView11"
-        android:layout_alignStart="@+id/textView11" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="0000"
-        android:textColor="#f92"
-        android:id="@+id/textView13"
-        android:textIsSelectable="false"
-        android:textSize="35dp"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="0000"
-        android:id="@+id/textView14"
-        android:textIsSelectable="false"
-        android:textColor="#f92"
-        android:textSize="35dp"
-        android:layout_below="@+id/textView13"
-        android:layout_alignLeft="@+id/textView8"
-        android:layout_alignStart="@+id/textView8" />
 </RelativeLayout>

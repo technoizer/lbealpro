@@ -30,4 +30,9 @@ public class Category implements Serializable {
     public void setCategory_nama(String category_nama) {
         this.category_nama = category_nama;
     }
+
+    @Override
+    public String toString() {
+        return getCategory_nama() + " " + getCategory_id();
+    }
 }

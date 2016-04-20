@@ -7,12 +7,13 @@ import java.io.Serializable;
  */
 public class Question implements Serializable {
 
-    Integer question_id, category_id;
+    Integer question_id, category_id, status;
     String konten, jawaban1, jawaban2, jawaban3, jawaban4, kunci;
 
-    public Question(Integer question_id, Integer category_id, String konten, String jawaban1, String jawaban2, String jawaban3, String jawaban4, String kunci) {
+    public Question(Integer question_id, Integer category_id, Integer status, String konten, String jawaban1, String jawaban2, String jawaban3, String jawaban4, String kunci) {
         this.question_id = question_id;
         this.category_id = category_id;
+        this.status = 0;
         this.konten = konten;
         this.jawaban1 = jawaban1;
         this.jawaban2 = jawaban2;
@@ -35,6 +36,14 @@ public class Question implements Serializable {
 
     public void setCategory_id(Integer category_id) {
         this.category_id = category_id;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public String getKonten() {
@@ -83,5 +92,10 @@ public class Question implements Serializable {
 
     public void setKunci(String kunci) {
         this.kunci = kunci;
+    }
+
+    @Override
+    public String toString() {
+        return getQuestion_id() + " " + getKunci();
     }
 }

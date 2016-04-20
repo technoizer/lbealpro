@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".GameOverActivity">
+    tools:context="id.ac.its.alpro.mathquiz.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -35,13 +35,5 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_game_over" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom">
-        <include layout="@layout/footer" />
-    </LinearLayout>
-
+    <include layout="@layout/content_main" />
 </android.support.design.widget.CoordinatorLayout>
