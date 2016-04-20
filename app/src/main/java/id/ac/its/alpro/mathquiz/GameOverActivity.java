@@ -1,9 +1,12 @@
 package id.ac.its.alpro.mathquiz;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -40,6 +43,7 @@ public class GameOverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_over);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         rv = (RecyclerView)findViewById(R.id.catagoryList);
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -95,15 +99,14 @@ public class GameOverActivity extends AppCompatActivity {
                 ScoreDbHelper db = new ScoreDbHelper(getApplicationContext());
                 Score tmp = new Score();
                 tmp.setPoint(score);
-                if (namaTxt.getText().toString().trim().equals("") || namaTxt.getText().toString().trim() == null){
-                    Toast.makeText(getApplicationContext(),"Isikan nama terlebih dahulu", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                if (namaTxt.getText().toString().trim().equals("") || namaTxt.getText().toString().trim() == null) {
+                    Toast.makeText(getApplicationContext(), "Isikan nama terlebih dahulu", Toast.LENGTH_SHORT).show();
+                } else {
                     tmp.setName(namaTxt.getText().toString().trim());
                     db.insert(tmp);
                     dialog.dismiss();
                     saveBtn.setVisibility(View.GONE);
-                    Toast.makeText(getApplicationContext(),"Score Berhasil Disimpan", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Score Berhasil Disimpan", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -111,5 +114,65 @@ public class GameOverActivity extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    DialogInterface.OnClickListener homeClickListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            switch (which){
+                case DialogInterface.BUTTON_POSITIVE:
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+
+                case DialogInterface.BUTTON_NEGATIVE:
+                    dialog.dismiss();
+                    break;
+            }
+        }
+    };
+
+    DialogInterface.OnClickListener scoreClickListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            switch (which){
+                case DialogInterface.BUTTON_POSITIVE:
+                    Intent intent = new Intent(getApplicationContext(), HighscoreActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+
+                case DialogInterface.BUTTON_NEGATIVE:
+                    dialog.dismiss();
+                    break;
+            }
+        }
+    };
+
+    public void goHome(View view) {
+
+        if (saveBtn.getVisibility() == view.GONE){
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else{
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Anda Belum Menyimpan Skor Anda, apakah yakin ?").setPositiveButton("Yes", homeClickListener).setNegativeButton("No", homeClickListener).show();
+        }
+    }
+
+
+    public void goHiscore(View view) {
+        if (saveBtn.getVisibility() == view.GONE){
+            Intent intent = new Intent(this, HighscoreActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else{
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Anda Belum Menyimpan Skor Anda, apakah yakin ?").setPositiveButton("Yes", scoreClickListener).setNegativeButton("No", scoreClickListener).show();
+        }
     }
 }

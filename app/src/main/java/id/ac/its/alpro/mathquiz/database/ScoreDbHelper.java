@@ -131,6 +131,6 @@ public class ScoreDbHelper extends SQLiteOpenHelper {
 
     public void  clearData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DROP TABLE IF EXISTS score");
+        db.execSQL("delete from "+ TABLE_SCORE);
     }
 }

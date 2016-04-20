@@ -43,6 +43,7 @@ public class MainGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_game);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         btnA = (Button) findViewById(R.id.btnA);
         btnB = (Button) findViewById(R.id.btnB);
         btnC = (Button) findViewById(R.id.btnC);

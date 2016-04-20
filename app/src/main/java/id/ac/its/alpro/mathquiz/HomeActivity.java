@@ -56,6 +56,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         rv = (RecyclerView)findViewById(R.id.catagoryList);
         rv.setHasFixedSize(true);
@@ -68,6 +69,18 @@ public class HomeActivity extends AppCompatActivity {
         Category category = (Category) view.getTag();
         questions.clear();
         new GetQuestion().execute(category.getCategory_id() + "");
+    }
+
+    public void goHome(View view) {
+//        Intent intent = new Intent(this, HomeActivity.class);
+//        startActivity(intent);
+//        finish();
+    }
+
+    public void goHiscore(View view) {
+        Intent intent = new Intent(this, HighscoreActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 
@@ -88,6 +101,7 @@ public class HomeActivity extends AppCompatActivity {
             dialog.dismiss();
             if(error == 1){
                 Toast.makeText(HomeActivity.this,"Terjadi Kesalahan, coba lagi dalam beberapa saat", Toast.LENGTH_SHORT).show();
+                finish();
             }
             else {
                 CatagoryAdapter adapter = new CatagoryAdapter(categories);
@@ -156,6 +170,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), MainGameActivity.class);
                 intent.putExtra("question", (Serializable) questions);
                 startActivity(intent);
+                finish();
                 Log.d("Pertanyaan", questions.toString());
             }
         }
